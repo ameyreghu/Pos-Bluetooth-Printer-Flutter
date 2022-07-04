@@ -20,7 +20,6 @@ class _HomeScreenState extends State<HomeScreen> {
   BluetoothDevice? _device;
   bool _connected = false;
   String pathImage = '';
-  //TestPrint
 
   @override
   void initState() {
@@ -95,7 +94,7 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Printer'),
+        title: const Text('Printer'),
       ),
       body: Padding(
         padding: const EdgeInsets.all(8.0),
@@ -125,7 +124,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 ),
               ],
             ),
-            SizedBox(
+            const SizedBox(
               height: 10,
             ),
             Row(
@@ -137,12 +136,12 @@ class _HomeScreenState extends State<HomeScreen> {
                   onPressed: () {
                     initPlatFormState();
                   },
-                  child: Text(
+                  child:const Text(
                     'Refresh',
                     style: TextStyle(color: Colors.white),
                   ),
                 ),
-                SizedBox(
+                const SizedBox(
                   width: 20,
                 ),
                 ElevatedButton(
@@ -151,7 +150,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   onPressed: _connected ? _disconnect : _connect,
                   child: Text(
                     _connected ? 'Disconnect' : 'Connect',
-                    style: TextStyle(color: Colors.white),
+                    style: const TextStyle(color: Colors.white),
                   ),
                 ),
               ],
@@ -164,7 +163,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   TestPrint().sample();
                 },
                 child:
-                    Text('PRINT TEST', style: TextStyle(color: Colors.white)),
+                   const Text('PRINT TEST', style: TextStyle(color: Colors.white)),
               ),
             ),
             Padding(

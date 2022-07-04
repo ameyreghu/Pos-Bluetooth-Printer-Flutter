@@ -43,27 +43,6 @@ class _AddDataScreenState extends State<AddDataScreen> {
                 child: Text('Print now')),
             TextButton(
                 onPressed: () async {
-                  var res = await http.get(Uri.parse(
-                      'https://itpikrc.org.in/mandapam/public/Appcontroller/recent_registerd_partner'));
-                  var resp = json.decode(res.body);
-                  var data = resp['data'];
-                  var d = data.toString();
-                  var temp = d.replaceAll('{', '');
-                  temp = temp.replaceAll('}', '');
-                  temp = temp.replaceAll('[', '');
-                  temp = temp.replaceAll(']', '');
-                  List<String> list = temp.split(',');
-
-                  print(temp);
-                  await Future.forEach(list, (String string) {
-                    bluettoth.printNewLine();
-                    bluettoth.printCustom(string, 1, 1);
-                  });
-                  bluettoth.paperCut();
-                },
-                child: Text('API PRINT TEST')),
-            TextButton(
-                onPressed: () async {
                   var picker = ImagePicker();
                   var img = await picker.pickImage(
                       source: ImageSource.gallery, imageQuality: 1);
